@@ -19,5 +19,12 @@ namespace DataGridViewFeatures.Models
         public double Height { get; set; }
         public DateTime Birthday { get; set; }
 
+        public User(string name, Gender gender, double height, DateTime birthday)
+        {
+            Name = name;
+            Gender = gender;
+            Height = height;
+            Birthday = birthday;
+        }
     }
 }

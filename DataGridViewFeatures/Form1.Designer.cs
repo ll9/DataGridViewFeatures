@@ -29,17 +29,63 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.Label birthdayLabel;
+            System.Windows.Forms.Label genderLabel;
+            System.Windows.Forms.Label heightLabel;
+            System.Windows.Forms.Label nameLabel;
             this.form1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.heightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.birthdayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.heightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.birthdayDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.genderTextBox = new System.Windows.Forms.TextBox();
+            this.heightTextBox = new System.Windows.Forms.TextBox();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.AddUserButton = new System.Windows.Forms.Button();
+            birthdayLabel = new System.Windows.Forms.Label();
+            genderLabel = new System.Windows.Forms.Label();
+            heightLabel = new System.Windows.Forms.Label();
+            nameLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // form1BindingSource
+            // 
+            this.form1BindingSource.DataSource = typeof(DataGridViewFeatures.Form1);
+            // 
+            // usersBindingSource
+            // 
+            this.usersBindingSource.DataMember = "Users";
+            this.usersBindingSource.DataSource = this.form1BindingSource;
+            // 
+            // birthdayDataGridViewTextBoxColumn
+            // 
+            this.birthdayDataGridViewTextBoxColumn.DataPropertyName = "Birthday";
+            this.birthdayDataGridViewTextBoxColumn.HeaderText = "Birthday";
+            this.birthdayDataGridViewTextBoxColumn.Name = "birthdayDataGridViewTextBoxColumn";
+            // 
+            // heightDataGridViewTextBoxColumn
+            // 
+            this.heightDataGridViewTextBoxColumn.DataPropertyName = "Height";
+            this.heightDataGridViewTextBoxColumn.HeaderText = "Height";
+            this.heightDataGridViewTextBoxColumn.Name = "heightDataGridViewTextBoxColumn";
+            // 
+            // genderDataGridViewTextBoxColumn
+            // 
+            this.genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
+            this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
+            this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
             // dataGridView1
             // 
@@ -56,63 +102,122 @@
             this.dataGridView1.Size = new System.Drawing.Size(446, 162);
             this.dataGridView1.TabIndex = 0;
             // 
-            // form1BindingSource
+            // birthdayLabel
             // 
-            this.form1BindingSource.DataSource = typeof(DataGridViewFeatures.Form1);
+            birthdayLabel.AutoSize = true;
+            birthdayLabel.Location = new System.Drawing.Point(521, 43);
+            birthdayLabel.Name = "birthdayLabel";
+            birthdayLabel.Size = new System.Drawing.Size(48, 13);
+            birthdayLabel.TabIndex = 1;
+            birthdayLabel.Text = "Birthday:";
             // 
-            // usersBindingSource
+            // birthdayDateTimePicker
             // 
-            this.usersBindingSource.DataMember = "Users";
-            this.usersBindingSource.DataSource = this.form1BindingSource;
+            this.birthdayDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.usersBindingSource, "Birthday", true));
+            this.birthdayDateTimePicker.Location = new System.Drawing.Point(575, 39);
+            this.birthdayDateTimePicker.Name = "birthdayDateTimePicker";
+            this.birthdayDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.birthdayDateTimePicker.TabIndex = 2;
             // 
-            // nameDataGridViewTextBoxColumn
+            // genderLabel
             // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            genderLabel.AutoSize = true;
+            genderLabel.Location = new System.Drawing.Point(521, 68);
+            genderLabel.Name = "genderLabel";
+            genderLabel.Size = new System.Drawing.Size(45, 13);
+            genderLabel.TabIndex = 3;
+            genderLabel.Text = "Gender:";
             // 
-            // genderDataGridViewTextBoxColumn
+            // genderTextBox
             // 
-            this.genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
-            this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
-            this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
+            this.genderTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usersBindingSource, "Gender", true));
+            this.genderTextBox.Location = new System.Drawing.Point(575, 65);
+            this.genderTextBox.Name = "genderTextBox";
+            this.genderTextBox.Size = new System.Drawing.Size(200, 20);
+            this.genderTextBox.TabIndex = 4;
             // 
-            // heightDataGridViewTextBoxColumn
+            // heightLabel
             // 
-            this.heightDataGridViewTextBoxColumn.DataPropertyName = "Height";
-            this.heightDataGridViewTextBoxColumn.HeaderText = "Height";
-            this.heightDataGridViewTextBoxColumn.Name = "heightDataGridViewTextBoxColumn";
+            heightLabel.AutoSize = true;
+            heightLabel.Location = new System.Drawing.Point(521, 94);
+            heightLabel.Name = "heightLabel";
+            heightLabel.Size = new System.Drawing.Size(41, 13);
+            heightLabel.TabIndex = 5;
+            heightLabel.Text = "Height:";
             // 
-            // birthdayDataGridViewTextBoxColumn
+            // heightTextBox
             // 
-            this.birthdayDataGridViewTextBoxColumn.DataPropertyName = "Birthday";
-            this.birthdayDataGridViewTextBoxColumn.HeaderText = "Birthday";
-            this.birthdayDataGridViewTextBoxColumn.Name = "birthdayDataGridViewTextBoxColumn";
+            this.heightTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usersBindingSource, "Height", true));
+            this.heightTextBox.Location = new System.Drawing.Point(575, 91);
+            this.heightTextBox.Name = "heightTextBox";
+            this.heightTextBox.Size = new System.Drawing.Size(200, 20);
+            this.heightTextBox.TabIndex = 6;
+            // 
+            // nameLabel
+            // 
+            nameLabel.AutoSize = true;
+            nameLabel.Location = new System.Drawing.Point(521, 120);
+            nameLabel.Name = "nameLabel";
+            nameLabel.Size = new System.Drawing.Size(38, 13);
+            nameLabel.TabIndex = 7;
+            nameLabel.Text = "Name:";
+            // 
+            // nameTextBox
+            // 
+            this.nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usersBindingSource, "Name", true));
+            this.nameTextBox.Location = new System.Drawing.Point(575, 117);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(200, 20);
+            this.nameTextBox.TabIndex = 8;
+            // 
+            // AddUserButton
+            // 
+            this.AddUserButton.Location = new System.Drawing.Point(519, 156);
+            this.AddUserButton.Name = "AddUserButton";
+            this.AddUserButton.Size = new System.Drawing.Size(255, 34);
+            this.AddUserButton.TabIndex = 9;
+            this.AddUserButton.Text = "Add User";
+            this.AddUserButton.UseVisualStyleBackColor = true;
+            this.AddUserButton.Click += new System.EventHandler(this.AddUserButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(803, 450);
+            this.Controls.Add(this.AddUserButton);
+            this.Controls.Add(birthdayLabel);
+            this.Controls.Add(this.birthdayDateTimePicker);
+            this.Controls.Add(genderLabel);
+            this.Controls.Add(this.genderTextBox);
+            this.Controls.Add(heightLabel);
+            this.Controls.Add(this.heightTextBox);
+            this.Controls.Add(nameLabel);
+            this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.form1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn heightDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn birthdayDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource usersBindingSource;
         private System.Windows.Forms.BindingSource form1BindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn birthdayDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn heightDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DateTimePicker birthdayDateTimePicker;
+        private System.Windows.Forms.TextBox genderTextBox;
+        private System.Windows.Forms.TextBox heightTextBox;
+        private System.Windows.Forms.TextBox nameTextBox;
+        private System.Windows.Forms.Button AddUserButton;
     }
 }
 
