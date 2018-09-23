@@ -26,5 +26,9 @@ namespace DataGridViewFeatures.Models
             Height = height;
             Birthday = birthday;
         }
+        public User()
+        {
+
+        }
     }
 }
