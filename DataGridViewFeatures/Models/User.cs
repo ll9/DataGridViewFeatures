@@ -12,7 +12,7 @@ namespace DataGridViewFeatures.Models
         Female
     }
 
-    class User
+    public class User
     {
         public string Name { get; set; }
         public Gender Gender { get; set; }

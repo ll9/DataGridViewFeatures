@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataGridViewFeatures.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace DataGridViewFeatures
 {
     public partial class Form1 : Form
     {
+        public BindingList<User> Users { get; set; }
+
         public Form1()
         {
             InitializeComponent();
